@@ -3,38 +3,127 @@
   <head>
     <meta charset="UTF-8" />
     <title>Fernacon</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-        darkMode: 'class'
-        }
-    </script>
-    <script src="src/js/darkmode.js" defer></script>
-  </head>
-  <body class="bg-white dark:bg-gray-950">
-    <div class="fixed top-6 right-6 m-6 z-3">
-        <button id="theme-switch" class="flex items-center justify-center rounded-xl h-10 w-10 hover:bg-slate-300 dark:hover:bg-slate-900">
-            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-slate-900 dark:text-slate-200">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-            </svg>
-        
-            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-slate-900 dark:text-slate-200 hidden">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-            </svg>
-        </button>    
-    </div>
-    <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-800">Bem-vindo à Fernacon</h1>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="src/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/img/favicon-16x16.png">
+    <link rel="icon" href="src/img/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="src/site.webmanifest">
 
-    <script>
-        const themeSwitch = document.getElementById("theme-switch");
-        const iconSun = document.getElementById("icon-sun");
-        const iconMoon = document.getElementById("icon-moon");
-    
-        themeSwitch.addEventListener("click", () => {
-            document.documentElement.classList.toggle("dark");
-                iconSun.classList.toggle("hidden");
-            iconMoon.classList.toggle("hidden");
-        });
-    </script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Navbar -->
+    <header class="w-full bg-gray-100 shadow-md">
+      <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
+        <img src="src/img/logo2.png" alt="Fernacon Logo" class="h-20">
+        <nav class="space-x-4 hidden sm:flex">
+          <a href="#sobre" class="hover:text-red-600">Sobre nós</a>
+          <a href="#portfolio" class="hover:text-red-600">Portfólio</a>
+          <a href="#contato" class="hover:text-red-600">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h2 class="text-3xl font-bold text-red-600 mb-4">Fernacon</h2>
+        <p class="text-lg mb-4">
+          Construção e manutenção industrial com mais de 15 anos de experiência
+          no setor, liderada por Leusinei Fernandes.
+        </p>
+        <p class="text-justify text-gray-700">
+          Atuamos na construção de novas estruturas, reformas e manutenções
+          industriais, prezando sempre pela qualidade, segurança e
+          comprometimento com nossos clientes. Trabalhamos em conjunto para
+          entregar soluções sob medida e resultados que garantem satisfação e
+          crescimento dos negócios que atendemos.
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="src/img/fundador.jpg" alt="Fundador" class="rounded-xl shadow-md mb-3 w-48 h-48 object-cover"/>
+        <p class="font-semibold">Fundador</p>
+        <p class="text-gray-600">Leusinei Fernandes</p>
+      </div>
+    </section>
+
+    <!-- Portfólio -->
+    <section id="portfolio" class="bg-gray-50 py-10 px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-2xl font-bold text-red-600 mb-6">Portfólio</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl shadow p-4">
+            <img
+                src="src/img/Obra1.jpg"
+                alt="Pintura de faixa de pedestres"
+                class="rounded-md mb-2 w-full h-48 object-cover"
+            />
+            <p class="text-gray-700">
+              Pintura de faixa de pedestres para segurança de funcionários.
+            </p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-4">
+            <img
+              src="src/img/Obra2.jpg"
+              alt="Outro projeto"
+                class="rounded-md mb-2 w-full h-48 object-cover"
+            />
+            <p class="text-gray-700">
+              Espaço para outro projeto.
+            </p>
+          </div>
+        </div>
+
+        <!-- Empresas -->
+        <div class="flex flex-wrap justify-center items-center mt-6 gap-4">
+          <p class="w-full text-center text-gray-700 mb-2">Empresas em que já atuamos:</p>
+          <img src="src/img/hines.png" alt="Hines" class="h-10 sm:h-12 object-contain">
+          <img src="src/img/dhl.png" alt="DHL" class="h-10 sm:h-12 object-contain">
+          <img src="src/img/magna.png" alt="Magna" class="h-10 sm:h-12 object-contain">
+          <img src="src/img/jt.png" alt="JT" class="h-10 sm:h-12 object-contain">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h2 class="text-2xl font-bold text-red-600 mb-4">Contatos</h2>
+        
+        <!-- Telefone com SVG -->
+        <div class="flex items-center mb-4 space-x-3">
+          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+            <path fill="#fff" d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"></path><path fill="#fff" d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"></path><path fill="#cfd8dc" d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"></path><path fill="#40c351" d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"></path><path fill="#fff" fill-rule="evenodd" d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z" clip-rule="evenodd"></path>
+          </svg>
+          <span class="text-gray-800 font-semibold">(19) 99856-3621</span>
+        </div>
+
+        <!-- Instagram link -->
+        <div class="mb-4">
+          <a href="#" class="flex items-center text-pink-500 font-semibold space-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+                <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"></stop><stop offset=".328" stop-color="#ff543f"></stop><stop offset=".348" stop-color="#fc5245"></stop><stop offset=".504" stop-color="#e64771"></stop><stop offset=".643" stop-color="#d53e91"></stop><stop offset=".761" stop-color="#cc39a4"></stop><stop offset=".841" stop-color="#c837ab"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"></stop><stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
+              </svg>
+            <span>@instagram</span>
+          </a>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <span class="font-semibold">Email:</span> leo@fernacon.net
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold text-red-600 mb-4">Áreas de atuação</h2>
+        <p>
+          Alvenaria, Pinturas, Pisos industriais, Parcerias de Projetos, Vidros,
+          Manutenção, Elétrica, Pavimentação asfáltica, Serralheria, Térmico,
+          Hidráulica.
+        </p>
+      </div>
+    </section>
   </body>
 </html>
